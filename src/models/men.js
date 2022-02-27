@@ -24,7 +24,12 @@ const menSchema = new mongoose.Schema({
     score:{
         type:Number,
         required:true,
-        trim:true
+        trim:true,
+        validate(value){
+            if(value < 0){
+                throw new Error("score can't be negative")
+            }
+        }
     },
     event:{
         type:String,

@@ -33,8 +33,8 @@ const getUser =async(req,res)=>{
 const patchUser = async(req,res)=>{
     try{
         const _id = req.params.id;
-        const getUser = await user.findByIdAndUpdate(_id,req.body,{new:true});
-        res.send(getUser);
+        const patchUser = await user.findByIdAndUpdate(_id,req.body,{new:true});
+        res.send(patchUser);
     }catch(e){
         res.status(500).send(e);
     }
@@ -42,8 +42,8 @@ const patchUser = async(req,res)=>{
 
 const deleteUser =async(req,res)=>{
     try{
-        const getUser = await user.findByIdAndDelete(req.params.id);
-        res.send(getUser);
+        const deleteUser = await user.findByIdAndDelete(req.params.id);
+        res.send(deleteUser);
     }catch(e){
         res.status(500).send(e);
     }
